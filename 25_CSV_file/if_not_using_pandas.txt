@@ -1,0 +1,45 @@
+# import csv
+# with open("weather_data.csv") as data_file:
+#     data = csv.reader(data_file)
+#     temperature = []
+#     day = []
+#     condition = []
+#     for row in data:
+#         if row[1] == "temp" or row[0] == "day" or row[2] == "condition":
+#             continue
+#         temperature.append(int(row[1]))
+#         day.append(row[0])
+#         condition.append(row[2])
+#
+#     print(day)
+#     print(temperature)
+#     print(condition)
+#  to avoid the above lines of code and much more cumbersome processes when
+#  we work with big data, we use PANDAS library
+
+# if using pandas
+
+# import pandas
+# data = pandas.read_csv("weather_data.csv")
+
+# temp_list = data["temp"].to_list()
+# avg = sum(temp_list)/len(temp_list)
+# print(avg)
+
+# print(data["temp"].mean())
+# print(data.temp.max())
+# print(data["temp"].min())
+#   .temp and ["temp"] both syntax are valid
+
+#   Get data in row
+# print(data[data.day == "Monday"])
+# print(data[data.temp == data.temp.max()])
+
+# monday = data[data.day == "Monday"]
+# print(int(monday.temp)*1.8 + 32)
+
+#   creating a dataframe from scratch
+#   use data = pandas.DataFrame(data that we generated in code here only or something else)
+#   data.to_csv("new_csv_file.csv") this creates a new csv file in the same folder as main
+#   file with your given name or can create a file at  location if you give a particular
+#   location.

@@ -1,0 +1,14 @@
+# creating your own class day 17
+# id is the attribute that will be passed everytime
+# when we create an object of the respective class.
+# pass 
+# pass will bypass the need of class definition, we can define the class
+# without getting the indentation error.
+# this (id) is an attribute made by using the user_1 object.
+# a constructor in python is made by the __init__() function means initialization
+# function. this is a special function
+# declared by
+# class Car:
+#   def __init__(self):
+#         in this function we will create the starting values of our attributes.
+

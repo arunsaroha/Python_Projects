@@ -1,0 +1,57 @@
+import time
+from turtle import Turtle, Screen
+
+# setting up the screen
+screen = Screen()
+screen.setup(width=1000, height=600)
+screen.bgcolor("black")
+screen.title("MY SNAKE GAME")
+# tracer will stop screen updation until we call screen.update()
+screen.tracer(0)
+
+# #1-- making snake body using single object
+# sn = Turtle(shape="square")
+# sn.shapesize(1, 3)
+# sn.color("white")
+# sn.penup()
+
+
+# Making Snake Body Using Multiple Objects
+# this method is better as in former if we will turn the snake it will turn
+# completely at once like from  ____ to | this and its flexibility is lost.
+segments = []
+x_pos = [0, -20, -40]  # used for a size 3
+for n in range(0,3):
+    new_segment = Turtle(shape="square")
+    new_segment.color("white")
+    new_segment.penup()
+    new_segment.goto(x=x_pos[n], y=0)
+    segments.append(new_segment)
+
+is_game_on = True
+
+while is_game_on:
+    screen.update()
+    time.sleep(0.1)
+    # for seg in segments:
+    #     seg.forward(20)
+#  in this method the segments are not linked to each other,
+#  and they will continue to move forward even if we changed
+#  the direction of first segment.
+# therefore, we will use another method in which the 3rd seg.
+# will move to the position of 2nd seg. and 2nd seg. will move
+#  to the position of 1st seg. and this will continue then, we,
+# would have to control only 1st segment.
+
+#     range(start=len(segments)-1, stop=0, step=-1) keywords, start, stop, step are used only for
+#     visualization, not to be used, in real code.
+    for seg_num in range(len(segments)-1, 0, -1):
+        new_x = segments[seg_num-1].xcor()
+        new_y = segments[seg_num - 1].ycor()
+        segments[seg_num].goto(x=new_x, y=new_y)
+    segments[0].forward(20)
+    segments[0].left(90)
+
+
+
+screen.exitonclick()
