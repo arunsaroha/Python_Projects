@@ -44,7 +44,7 @@ if diff >= PERCENT*yesterday_price:
         client = Client(ACCOUNT_SID, AUTH_TOKEN)
         message = client.messages.create(
             body=article,
-            from_ = "+16405003215",
-            to = "+919115572874",
+            from_ = "***********",
+            to = "***********",
         )
 
