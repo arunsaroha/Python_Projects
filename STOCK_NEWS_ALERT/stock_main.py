@@ -47,4 +47,3 @@ if diff >= PERCENT*yesterday_price:
             from_ = "***********",
             to = "***********",
         )
-
